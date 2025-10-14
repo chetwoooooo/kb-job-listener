@@ -1,0 +1,12 @@
+{
+  "name": "kb-job-listener",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "pg": "^8.11.0",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node kb-job-listener.mjs"
+  }
+}
