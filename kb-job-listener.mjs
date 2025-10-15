@@ -87,5 +87,10 @@ async function main() {
 main().catch((e) => {
   console.error("[listener] Failed to start:", e);
   process.exit(1);
+  if (new URL(DATABASE_URL).hostname === "127.0.0.1" || new URL(DATABASE_URL).hostname === "localhost") {
+  console.error("[listener] Refusing to connect to localhost in production.");
+  process.exit(1);
+}
 });
+
 
