@@ -1,11 +1,1 @@
-#!/bin/bash
-# start.sh — startup script for Railway deployment
-
-# Exit immediately if a command exits with a non-zero status
-set -e
-
-# Print each command before executing (useful for debugging)
-set -x
-
-# Run your Node.js app
-exec node kb-job-listener.mjs
+{ "filename": "start.sh", "language": "sh", "content": "#!/bin/sh\nset -eu\n# Enable xtrace only if DEBUG=1 to reduce noise in prod\nif [ "${DEBUG:-0}" = "1" ]; then\n set -x\nfi\necho "[start] launching listener (sh)"\nexec node kb-job-listener.mjs\n" }
